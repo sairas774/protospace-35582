@@ -7,8 +7,8 @@
       <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user), class: :prototype__user %>
       <% if current_user == @prototype.user %>
         <div class="prototype__manage">
-          <%= link_to "編集する", edit_prototype_path, class: :prototype__btn %>
-          <%= link_to "削除する", prototype_path, method: :delete, class: :prototype__btn %>
+          <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
+          <%= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
           <%# link_toで作成したリンクは特に指定がない場合はHTTPメソッドはGETメソッドを使用するため、
               投稿したツイートやコメント、ルームやプロトタイプなどといった何かしらコンテンツを削除するときや
               ログアウト処理を行う際はlink_to内に使用するHTTPメソッドを指定できるmethod: :deleteを記述しなければならない。 %>
